@@ -1,0 +1,21 @@
+{
+  "name": "ng-gulp-template",
+  "version": "0.1.0",
+  "description": "",
+  "main": "src/main.ts",
+  "engines": {
+    "node": ">=6.2",
+    "npm": ">=3.9"
+  },
+  "author": "Joe Hawkins <jedwardhawkins@gmail.com>",
+  "license": "ISC",
+  "repository": "https://github.com/jedwardhawkins/ng-gulp-template",
+  "devDependencies": {
+    "@types/angular": "1.5.8",
+    "@types/angular-ui-router": "1.1.36",
+    "@types/node": "6.0.45",
+    "angular": "1.5.8",
+    "gulp": "3.9.1",
+    "ng-gulp": "git@github.com:jedwardhawkins/ng-gulp.git#v0.1.2"
+  }
+}
