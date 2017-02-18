@@ -1,6 +1,6 @@
 {
   "name": "ng-gulp-template",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "main": "src/main.ts",
   "engines": {
@@ -16,6 +16,6 @@
     "@types/node": "6.0.45",
     "angular": "1.5.8",
     "gulp": "3.9.1",
-    "ng-gulp": "git@github.com:jedwardhawkins/ng-gulp.git#v0.1.2"
+    "ng-gulp": "git@github.com:jedwardhawkins/ng-gulp.git#v0.1.3"
   }
 }
