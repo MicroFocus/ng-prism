@@ -13,6 +13,7 @@
     ],
     "types": [
       "angular",
+      "angular-ui-router",
       "jquery",
       "node"
     ]
