@@ -11,4 +11,4 @@ module('app', [
     .component('applicationComponent', ApplicationComponent)
     .component('dashboardComponent', DashboardComponent);
 
-bootstrap(document, ['app']);
+bootstrap(document, ['app', 'ngAnimate', 'ngAria', 'ngMaterial']);
