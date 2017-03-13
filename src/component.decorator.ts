@@ -1,5 +1,4 @@
-import * as angular from 'angular';
-import { IAugmentedJQuery, IAttributes} from 'angular';
+import { extend, IAugmentedJQuery, IAttributes} from 'angular';
 
 export interface IContentTemplateFunction {
     ($element: IAugmentedJQuery, $attrs?: IAttributes): string;
@@ -14,5 +13,5 @@ export function Component(options: {
     transclude?: boolean,
     stylesheetUrl?: string
 }) {
-    return (controller: Function) => angular.extend(options, { controller: controller });
+    return (controller: Function) => extend(options, { controller: controller });
 }
