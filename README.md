@@ -9,7 +9,7 @@ For more information about configuring ng-gulp visit the project on [Github](htt
 Before you begin you'll need to fork the project and clone it.
 
 1. `npm install`
-2. Replace all instances of `[APP_NAME_TITLE]` in the project with the title case version of your application name. 
+2. Replace all instances of `PrismJS using Angular` in the project with the title case version of your application name. 
 (ex: Application Name)
 3. Edit `package.json` with the appropriate information for your project.
 

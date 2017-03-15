@@ -1,14 +1,5 @@
-import { bootstrap, module } from 'angular';
-import routes from './config/routes';
-import ApplicationComponent from './components/application/application.component';
-import DashboardComponent from './components/dashboard/dashboard.component';
+import { module } from 'angular';
+import RepeatAsCode from './repeat-as-code.component';
 
-
-module('app', [
-    'ui.router'
-])
-    .config(routes)
-    .component('applicationComponent', ApplicationComponent)
-    .component('dashboardComponent', DashboardComponent);
-
-bootstrap(document, ['app', 'ngAnimate', 'ngAria', 'ngMaterial']);
+module('app', [])
+	.directive('repeatAsCode', RepeatAsCode);

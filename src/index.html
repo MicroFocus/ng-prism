@@ -4,15 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>[APP_NAME_TITLE]</title>
+    <title>PrismJS using Angular</title>
 
     <link rel="stylesheet" href="vendor/vendor.css">
     <link rel="stylesheet" href="app.css">
-</head>
-<body>
-    <ui-view layout="column">Loading...</ui-view>
-
     <script type="application/javascript" src="vendor/vendor.js"></script>
     <script type="application/javascript" src="app.js"></script>
+</head>
+<body>
+    <div repeat-as-code>
+        <mf-app-bar>
+            <h3 class="mf-title" title="App Bar Title">App Bar Title</h3>
+            <span class="mf-fill"></span>
+            <mf-button mf-toggle="accountMenu" title="Descriptive Title">user@email.com
+                <mf-icon icon="down_thick"></mf-icon>
+            </mf-button>
+            <mf-menu name="accountMenu">
+                <mf-button>Settings</mf-button>
+                <mf-button>Sign Out</mf-button>
+            </mf-menu>
+        </mf-app-bar>
+    </div>
+    <script>
+        angular.bootstrap(document, ['app']);
+    </script>
 </body>
 </html>

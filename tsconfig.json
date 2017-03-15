@@ -3,8 +3,6 @@
     "baseUrl": "./",
     "experimentalDecorators": true,
     "module": "commonjs",
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
     "removeComments": true,
     "sourceMap": true,
     "target": "es5",
@@ -13,12 +11,11 @@
     ],
     "types": [
       "angular",
-      "angular-material",
       "angular-mocks",
-      "angular-ui-router",
       "jasmine",
       "jquery",
-      "node"
+      "node",
+      "prismjs"
     ]
   },
   "files": [
