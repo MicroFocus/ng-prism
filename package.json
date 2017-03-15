@@ -1,15 +1,15 @@
 {
-  "name": "ng-gulp-template",
-  "version": "0.2.1",
+  "name": "ng-prism",
+  "version": "1.0.0",
   "description": "",
   "main": "src/main.ts",
   "engines": {
     "node": ">=6.2",
     "npm": ">=3.9"
   },
-  "author": "Joe Hawkins <jedwardhawkins@gmail.com>",
+  "author": "Joseph White <polishedsapphire@gmail.com>",
   "license": "ISC",
-  "repository": "https://github.com/jedwardhawkins/ng-gulp-template",
+  "repository": "https://github.com/joswhite/ng-prism",
   "devDependencies": {
     "@types/angular": "1.5.8",
     "@types/angular-mocks": "1.5.8",
