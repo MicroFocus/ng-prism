@@ -15,7 +15,6 @@
     "@types/angular-mocks": "1.5.8",
     "@types/angular-ui-router": "1.1.36",
     "@types/node": "6.0.45",
-    "@types/prismjs": "1.4.18",
     "angular": "1.5.8",
     "angular-mocks": "1.5.8",
     "angular-ui-router": "1.0.0-beta.3",

@@ -14,8 +14,7 @@
       "angular-mocks",
       "jasmine",
       "jquery",
-      "node",
-      "prismjs"
+      "node"
     ]
   },
   "files": [

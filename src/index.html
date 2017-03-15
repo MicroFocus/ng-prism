@@ -12,6 +12,7 @@
     <script type="application/javascript" src="app.js"></script>
 </head>
 <body>
+
     <div repeat-as-code>
         <mf-app-bar>
             <h3 class="mf-title" title="App Bar Title">App Bar Title</h3>
@@ -25,6 +26,16 @@
             </mf-menu>
         </mf-app-bar>
     </div>
+    <pre><code class="language-javascript">
+    lines.forEach((line: string) => {
+        whitespaceLength = getWhitespaceLength(line);
+        if (whitespaceLength > 0) {
+          if (commonWhitespaceLength === -1 || whitespaceLength < commonWhitespaceLength) {
+            commonWhitespaceLength = whitespaceLength;
+          }
+        }
+      });
+    </code></pre>
     <script>
         angular.bootstrap(document, ['app']);
     </script>
