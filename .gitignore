@@ -1,6 +1,9 @@
 # NPM
 node_modules
 
+# Build output
+dist
+
 # IDEA personal files
 .idea
 
