@@ -6,9 +6,10 @@ export default [
 		return {
 			restrict: 'A',
 			link: (scope: IScope, element: IAugmentedJQuery) => {
-				let code = element[0].innerHTML;
+				element[0].removeAttribute('repeat-as-code');
+				let code = element[0].outerHTML;
 				let highlightedCode = highlight(code, 'markup');
-				element.append(highlightedCode);
+				element.after(highlightedCode);
 			}
 		};
 	}
