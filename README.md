@@ -13,7 +13,8 @@
   `<pre><code class="language-javascript">...</code></pre>`
   
 - `repeat-as-code` directive - repeats HTML as highlighted code immediately after tag:<br>
-  `<tag repeat-as-code>...</tag>` becomes HTML &lt;tag&gt;...&lt;/tag&gt; followed by code `<tag>...</tag>` 
+  `<tag repeat-as-code>...</tag>` becomes HTML &lt;tag&gt;...&lt;/tag&gt; followed by code `<tag>...</tag>`
+   * `repeat-as-code="inner"` - uses inner HTML for code block
     
 ### Development
 
