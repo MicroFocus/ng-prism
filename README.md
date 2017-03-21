@@ -1,10 +1,13 @@
 # ng-prism
 
-### Use
+### Installation
 
-1. `npm install joswhite/ng-prism`
-2. Add `ng-prism` module dependency to your Angular app by requiring dist/app.js
-3. Use Angular directives and Prism to highlight your code
+- `npm install joswhite/ng-prism`
+- `angular.module('myApp', ['ng-prism']);`
+- `<script src="ng-prism.js">`
+  `<link rel="stylesheet" href="vendor.css">`  ***fix***
+
+### Use
 
 - Use Prism directly - http://prismjs.com (the example below highlights Javascript code)<br>
   `<pre><code class="language-javascript">...</code></pre>`

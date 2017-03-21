@@ -7,9 +7,9 @@
     <title>PrismJS using Angular</title>
 
     <link rel="stylesheet" href="vendor/vendor.css">
-    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="ng-prism.css">
     <script type="application/javascript" src="vendor/vendor.js"></script>
-    <script type="application/javascript" src="app.js"></script>
+    <script type="application/javascript" src="ng-prism.js"></script>
 </head>
 <body>
     <mf-app-bar repeat-as-code>
@@ -25,14 +25,14 @@
         </mf-menu>
     </mf-app-bar>
     <pre><code class="language-javascript">
-    lines.forEach((line: string) => {
-        whitespaceLength = getWhitespaceLength(line);
-        if (whitespaceLength > 0) {
-          if (commonWhitespaceLength === -1 || whitespaceLength < commonWhitespaceLength) {
-            commonWhitespaceLength = whitespaceLength;
-          }
-        }
-      });
+	otherLines.forEach((line: string) => {
+		if (!isBlankLine(line)) {
+			whitespaceLength = getWhitespaceLength(line);
+			if (commonWhitespaceLength === -1 || whitespaceLength < commonWhitespaceLength) {
+				commonWhitespaceLength = whitespaceLength;
+			}
+		}
+	});
     </code></pre>
     <script>
         angular.bootstrap(document, ['ng-prism']);
