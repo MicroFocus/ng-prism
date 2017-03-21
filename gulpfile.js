@@ -2,7 +2,10 @@ var gulp = require('gulp');
 var ngGulp = require('ng-gulp');
 
 ngGulp(gulp, {
-	cssBasename: "ng-prism",
+	directories: {
+		outputVendor: "dist"
+	},
+	vendorCssBasename: "ng-prism",
 	jsBasename: "ng-prism",
     externals: {
     },
