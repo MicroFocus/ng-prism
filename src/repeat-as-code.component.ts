@@ -4,6 +4,7 @@ import highlight from './highlight';
 export default [
 	() => {
 		return {
+			priority: 10,
 			restrict: 'A',
 			link: (scope: IScope, element: IAugmentedJQuery) => {
 				element[0].removeAttribute('repeat-as-code');
