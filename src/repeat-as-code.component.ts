@@ -6,7 +6,7 @@ export default [
 		return {
 			priority: 10,
 			restrict: 'A',
-			link: (scope: IScope, element: IAugmentedJQuery) => {
+			compile: (element: IAugmentedJQuery) => {
 				element[0].removeAttribute('repeat-as-code');
 				let code = element[0].outerHTML;
 				let highlightedCode = highlight(code, 'markup');
