@@ -4,8 +4,8 @@
 
 - `npm install joswhite/ng-prism`
 - `angular.module('myApp', ['ng-prism']);`
-- `<script src="ng-prism.js">`
-  `<link rel="stylesheet" href="vendor.css">`  ***fix***
+- `<script src="ng-prism.js">`<br>
+  `<link rel="stylesheet" href="ng-prism.css">`
 
 ### Use
 
@@ -21,6 +21,5 @@ Run `gulp` and navigate to localhost:8080.
 
 ### Notes
 
-- These Angular directives convert 4 spaces to the tab character and trim common leading whitespace.
- Using Prism directly does not do this.
+- ng-prism converts 4 spaces to the tab character 
 - This project uses [jedwardhawkins/ng-gulp](https://www.github.com/jedwardhawkins/ng-gulp).
