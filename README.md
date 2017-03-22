@@ -11,6 +11,10 @@
 
 - Use Prism directly - http://prismjs.com (the example below highlights Javascript code)<br>
   `<pre><code class="language-javascript">...</code></pre>`
+
+- `highlight` directive - Use Prism without page reload (i.e. works with UIRouter)<br>
+  `<pre><code highlight>...</code></pre>` (default language is Javascript)<br>
+  `<pre><code highlight="xml">...</code></pre>`
   
 - `repeat-as-code` directive - repeats HTML as highlighted code immediately after tag:<br>
   `<tag repeat-as-code>...</tag>` becomes HTML &lt;tag&gt;...&lt;/tag&gt; followed by code `<tag>...</tag>`

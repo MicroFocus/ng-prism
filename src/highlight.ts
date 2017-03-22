@@ -5,8 +5,7 @@ require('prismjs/plugins/normalize-whitespace/prism-normalize-whitespace');	// A
 let whitespacePlugin = Prism.plugins.NormalizeWhitespace;					// Public-facing plugin object
 
 whitespacePlugin.setDefaults({
-	'break-lines': 90,
-	'spaces-to-tabs': 4
+	'tabs-to-spaces': 4
 });
 
 // Determine length of whitespace at beginning of string

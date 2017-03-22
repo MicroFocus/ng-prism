@@ -41,6 +41,22 @@
 		}
 	});
     </code></pre>
+		<pre><code highlight>
+		this.openPromptDialog = function () {
+			this.MfDialogService
+				.prompt({
+				cancel: 'Cancel',
+				ok: 'OK',
+				textContent: 'What do you want to say?',
+				title: 'Prompt'
+			})
+				.then(function (result) {
+				alert(result);
+			}, function () {
+				alert('declined');
+			});
+		};
+    </code></pre>
     <script>
         angular.bootstrap(document, ['ng-prism']);
     </script>

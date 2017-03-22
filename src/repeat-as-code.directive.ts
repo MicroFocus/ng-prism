@@ -7,7 +7,7 @@ export default [
 			priority: 1000,
 			restrict: 'A',
 			compile: (element: IAugmentedJQuery, attr: IAttributes) => {
-				element[0].removeAttribute('repeat-as-code');
+				element.removeAttr('repeat-as-code');
 				let code = null;
 				if (attr.repeatAsCode === 'inner') {
 					code = element[0].innerHTML;
@@ -17,7 +17,6 @@ export default [
 				}
 				let highlightedCode = highlight(code, 'markup');
 				element.after(highlightedCode);
-
 			}
 		};
 	}
