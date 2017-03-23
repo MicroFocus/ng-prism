@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var ngGulp = require('ng-gulp');
 
 ngGulp(gulp, {
+	devServerPort: 8082,
 	directories: {
 		outputVendor: "dist"
 	},
