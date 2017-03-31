@@ -33,7 +33,7 @@ export function normalizeOuterHTML(code: string): string {
 export function highlight(code: string, language: string): IAugmentedJQuery {
 	code = whitespacePlugin.normalize(code);
 	let highlightedCode = Prism.highlight(code, Prism.languages[language]);
-	let template = `<pre class="language-${language}"><code dir="ltr" class="language-${language}"></code></pre>`;
+	let template = `<pre class="language-${language}" dir="ltr"><code class="language-${language}"></code></pre>`;
 	let markup = element(template);
 	markup.find('code').html(highlightedCode);
 	return markup;

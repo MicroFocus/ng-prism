@@ -8,7 +8,7 @@ export default [
 			restrict: 'A',
 			compile: (element: IAugmentedJQuery, attr: IAttributes) => {
 				element.removeAttr('highlight');
-				element.attr('dir', 'ltr');
+				element.parent().attr('dir', 'ltr');
 				let language = attr.highlight || 'javascript';
 				element.addClass(`language-${language}`);
 				Prism.highlightElement(element[0]);
