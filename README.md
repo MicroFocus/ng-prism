@@ -26,6 +26,6 @@ Run `gulp` and navigate to localhost:8080.
 
 ### Notes
 
-- ng-prism converts 4 spaces to the tab character
+- ng-prism converts 4 spaces to the tab character and forces LTR display on the code block
 - HTML markup needs to be escaped, unless you are using the `repeat-as-code` directive
 - This project uses [jedwardhawkins/ng-gulp](https://www.github.com/jedwardhawkins/ng-gulp).
