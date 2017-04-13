@@ -1,5 +1,5 @@
 import { element, IAugmentedJQuery } from 'angular';
-let Prism = require('prismjs');
+import * as Prism from 'prismjs';
 
 require('prismjs/plugins/normalize-whitespace/prism-normalize-whitespace');	// Anonymous function to load plugin
 let whitespacePlugin = Prism.plugins.NormalizeWhitespace;					// Public-facing plugin object
