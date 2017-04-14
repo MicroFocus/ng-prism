@@ -10,66 +10,24 @@
 	<link rel="stylesheet" href="app.css">
 	<script type="application/javascript" src="vendor.js"></script>
 	<script type="application/javascript" src="ng-prism.js"></script>
-	<style>
-
-	</style>
+	<script>
+		window.onload = function() {
+            document.getElementById('changeDir').addEventListener('click', function() {
+                document.body.dir = (document.body.dir === 'rtl') ? 'ltr' : 'rtl';
+            });
+		};
+	</script>
 </head>
 <body>
-    <mf-app-bar repeat-as-code>
-        <h3 class="mf-title" title="App Bar Title">App Bar Title</h3>
-        <span class="mf-fill"></span>
-        <mf-button mf-toggle="accountMenu" title="Descriptive Title">user@email.com
-            <mf-icon icon="down_thick"></mf-icon>
-        </mf-button>
-
-        <mf-menu name="accountMenu">
-            <mf-button>Settings</mf-button>
-            <mf-button>Sign Out</mf-button>
-        </mf-menu>
-    </mf-app-bar>
-		<div repeat-as-code="inner">
-			<mf-icon icon="favorite_outline_thin" class="mf-medium">
-				My Icon
-			</mf-icon>
-			<mf-icon icon="search_thick" class="mf-medium"></mf-icon>
-			<mf-icon icon="close_thick" class="mf-medium"></mf-icon>
-		</div>
-    <pre dir="ltr"><code class="language-javascript">
-	otherLines.forEach((line: string) => {
-		if (!isBlankLine(line)) {
-			whitespaceLength = getWhitespaceLength(line);
-			if (commonWhitespaceLength === -1 || whitespaceLength < commonWhitespaceLength) {
-				commonWhitespaceLength = whitespaceLength;
-			}
-		}
-	});
-    </code></pre>
-	<pre><code highlight>
-		this.openPromptDialog = function () {
-			this.MfDialogService
-				.prompt({
-				cancel: 'Cancel',
-				ok: 'OK',
-				textContent: 'What do you want to say?',
-				title: 'Prompt'
-			})
-				.then(function (result) {
-				alert(result);
-			}, function () {
-				alert('declined');
-			});
-		};
-    </code></pre>
-	<pre dir="ltr"><code class="language-markup">
-		&lt;link rel="stylesheet" href="mf-icons.css" /&gt;
-		&lt;link rel="stylesheet" href="ng-mfux.css" /&gt;
-		&lt;script src="ng-mfux.js"&gt;&lt;/script&gt;
-	</code></pre>
-	<pre><code highlight="markup" data-toolbar="none">
-		&lt;link rel="stylesheet" href="mf-icons.css" /&gt;
-		&lt;link rel="stylesheet" href="ng-mfux.css" /&gt;
-		&lt;script src="ng-mfux.js"&gt;&lt;/script&gt;
-	</code></pre>
+	<button id="changeDir">Change direction</button>
+	<div toggle-repeat-code="inner">
+		<span>
+			<i class="mf-icon mf-icon-search_thick"></i>
+		</span>
+	</div>
+	<span toggle-repeat-code>
+		<i class="mf-icon mf-icon-search_thick"></i>
+	</span>
 	<script>
         angular.bootstrap(document, ['ng-prism']);
     </script>

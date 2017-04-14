@@ -2,41 +2,10 @@ import {element, IAugmentedJQuery} from 'angular';
 import * as Prism from 'prismjs';
 
 require('prismjs/plugins/normalize-whitespace/prism-normalize-whitespace');	// Anonymous functions to load plugins
-require('prismjs/plugins/toolbar/prism-toolbar');
 let whitespacePlugin = Prism.plugins.NormalizeWhitespace;					// Public-facing plugin objects
-let toolbarPlugin = Prism.plugins.toolbar;
 
 whitespacePlugin.setDefaults({
     'tabs-to-spaces': 4
-});
-
-// Provide interface to show and hide code blocks, except if <code> has attribute data-toolbar="none"
-toolbarPlugin.registerButton('button', (env) => {
-    let codeBlock = element(env.element);
-    let toolbarOverride = codeBlock.attr('data-toolbar');
-    if (toolbarOverride === 'none') {
-        return null;
-    }
-
-    let preBlock = codeBlock.parent();
-    let showCode = element(`<div class="prism-show-code" dir="ltr"><button type="button">Show Code</button></div>`);
-    showCode.on('click', () => {
-        showCode.addClass('prism-hidden');
-        preBlock.removeClass('prism-hidden');
-    });
-
-    preBlock.after(showCode);
-    preBlock.addClass('prism-hidden');
-    // env.element.hasAttribute('disabled') , .getAttribute() (sequence to avoid exception)
-
-    let html = `<span><i class="mf-icon mf-icon-close_thick"></i></span>`;
-    let button = element(html);
-    button.on('click', () => {
-        preBlock.addClass('prism-hidden');
-        showCode.removeClass('prism-hidden');
-    });
-
-    return button[0];
 });
 
 
@@ -65,9 +34,7 @@ export function normalizeOuterHTML(code: string): string {
 export function highlight(code: string, language: string): IAugmentedJQuery {
     code = whitespacePlugin.normalize(code);
     let highlightedCode = Prism.highlight(code, Prism.languages[language]);
-    let template = `<pre class="language-${language}" dir="ltr">
-						<code class="language-${language}"></code>
-					</pre>`;
+    let template = `<pre class="language-${language}" dir="ltr"><code class="language-${language}"></code></pre>`;
     let markup = element(template);
     markup.find('code').html(highlightedCode);
     return markup;
