@@ -12,15 +12,17 @@ ngGulp(gulp, {
     files: {
         vendorDevelopment: [
             'node_modules/angular/angular.js',
-			'node_modules/mf-icons/dist/**/*',
+            'node_modules/mf-icons/dist/**/*',
             'src/styles/app.css',
-            '!node_modules/mf-icons/dist/mf-icons.min.css'
+            '!node_modules/mf-icons/dist/mf-icons.min.css',
+            '!node_modules/mf-icons/dist/mf-icons.html'
 		],
         vendorProduction: [
             'node_modules/angular/angular.js',
             'node_modules/mf-icons/dist/**/*',
             'src/styles/app.css',
-            '!node_modules/mf-icons/dist/mf-icons.min.css'
+            '!node_modules/mf-icons/dist/mf-icons.min.css',
+            '!node_modules/mf-icons/dist/mf-icons.html'
 		],
         vendorTest: [
             'node_modules/angular/angular.js',
