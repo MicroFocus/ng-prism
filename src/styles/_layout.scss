@@ -1,6 +1,30 @@
-body, html {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  margin: 0;
+@import '../../node_modules/prismjs/themes/prism-okaidia';
+@import '../../node_modules/prismjs/plugins/toolbar/prism-toolbar';
+
+pre.code-toolbar > .toolbar span {
+  border-radius: 3px;
+  margin-right: 5px;
   padding: 0;
+  line-height: normal;
+  display: inline-block;
+
+  &:focus {
+    outline: none;
+  }
+
+  > i {
+    font-size: 25px;
+    height: 1em;
+    width: 1em;
+    vertical-align: middle;
+  }
+}
+
+.prism-hidden {
+  display: none;
+}
+
+.prism-show-code {
+  text-align: right;
+  margin: .5em 0;
 }
