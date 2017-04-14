@@ -6,3 +6,7 @@ node_modules
 
 # Generated log files
 *.log
+
+# Temporary build output
+dist
+!dist/ng-prism.*
