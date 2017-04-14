@@ -1,72 +1,9 @@
-@import '../../node_modules/prismjs/themes/prism-okaidia';
-
-.code-toolbar {
-  position: relative;
-
-  > .toolbar {
-    position: absolute;
-    top: .3em;
-    right: .2em;
-    transition: opacity 0.3s ease-in-out;
-    opacity: 0;
-
-    .toolbar-item {
-      display: inline-block;
-    }
-
-    span {
-      color: #bbb;
-      font-size: .8em;
-      padding: 0 .5em;
-      background: #f5f2f0;
-      background: rgba(224, 224, 224, 0.2);
-      box-shadow: 0 2px 0 0 rgba(0,0,0,0.2);
-      border-radius: .5em;
-
-      &:hover,
-      &:focus {
-        color: white;
-        text-decoration: none;
-      }
-    }
-  }
-
-  &:hover > .toolbar {
-    opacity: 1;
-  }
-}
-
-
-
-.code-toolbar > .toolbar span {
-  border-radius: 3px;
-  margin-right: 5px;
-  padding: 0;
-  line-height: normal;
-  display: inline-block;
-
-  &:focus {
-    outline: none;
-  }
-
-  > i {
-    font-size: 25px;
-    height: 1em;
-    width: 1em;
-    vertical-align: middle;
-  }
-}
-
 .prism-hidden {
   display: none;
 }
 
-toggle-show {
+toggle-show > .show-code {
   display: block;
   text-align: right;
   margin: .5em 0;
 }
-
-
-
-

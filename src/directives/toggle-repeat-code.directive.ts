@@ -8,8 +8,8 @@ export default ['RepeatAsCodeService',
             compile: (tElement: IAugmentedJQuery, attr: IAttributes) => {
                 tElement.removeAttr('toggle-repeat-code');
                 RepeatAsCodeService(tElement, attr.toggleRepeatCode);
-                let showHide = element(`<toggle-show></toggle-show>`);
-                tElement.after(showHide[0]);
+                let toggleShow = element(`<toggle-show></toggle-show>`);
+                tElement.after(toggleShow);
             }
         };
     }
