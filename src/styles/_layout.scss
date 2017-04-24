@@ -2,8 +2,16 @@
   display: none;
 }
 
-toggle-show > .show-code {
+toggle-show {
   display: block;
-  text-align: right;
-  margin: .5em 0;
+
+  > .show-code {
+    display: block;
+    text-align: right;
+    margin: .5em 0;
+
+    &.prism-hidden {
+      display: none;
+    }
+  }
 }

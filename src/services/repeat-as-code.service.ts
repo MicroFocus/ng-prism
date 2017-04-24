@@ -13,6 +13,7 @@ function RepeatAsCodeService() {
             code = normalizeOuterHTML(element[0].outerHTML);
         }
         let highlightedCode = highlight(code, 'markup');
-        element.after(highlightedCode);
+
+        return highlightedCode;
     };
 }

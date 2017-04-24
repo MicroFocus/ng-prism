@@ -1,9 +1,9 @@
-<div class="show-code" dir="ltr">
-    <button type="button">Show Code</button>
+<div ng-class="['show-code', {'prism-hidden': !$ctrl.hidden}]" dir="ltr">
+    <button type="button" ng-click="$ctrl.showCode()">Show Code</button>
 </div>
-<div class="code-toolbar" dir="ltr">
+<div ng-class="['code-toolbar', {'prism-hidden': $ctrl.hidden}]" dir="ltr">
     <div class="toolbar">
-        <div class="toolbar-item">
+        <div class="toolbar-item" ng-click="$ctrl.hideCode()">
             <span>
                 <i class="mf-icon mf-icon-close_thick"></i>
             </span>
