@@ -1,3 +1,6 @@
+/*
+ * Dynamically creates a code block from the given jQuery DOM element
+ */
 import {IAugmentedJQuery} from 'angular';
 import { highlight, normalizeOuterHTML } from '../highlight';
 

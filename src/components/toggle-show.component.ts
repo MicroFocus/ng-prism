@@ -1,3 +1,9 @@
+/*
+ * Toggles show/hide of a component
+ * Displays button when component is hidden, "x" when component is visible
+ * Use onHide and onShow listeners to trigger
+ */
+
 import { Component } from '../component.decorator';
 import {IScope} from 'angular';
 

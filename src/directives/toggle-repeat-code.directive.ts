@@ -1,3 +1,8 @@
+/*
+ * Dynamically creates a code block that matches the element
+ * Shows/hides the code block per user input
+ */
+
 import {element, IAttributes, IAugmentedJQuery, ICompileService, IScope} from 'angular';
 import {IRepeatAsCodeService} from '../services/repeat-as-code.service';
 

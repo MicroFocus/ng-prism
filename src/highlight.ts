@@ -1,3 +1,7 @@
+/*
+ * Functions to highlight a given code block.
+ */
+
 import {element, IAugmentedJQuery} from 'angular';
 import * as Prism from 'prismjs';
 

@@ -1,3 +1,7 @@
+/*
+ * Dynamically creates a code block that matches the element
+ */
+
 import { IAttributes, IAugmentedJQuery } from 'angular';
 import {IRepeatAsCodeService} from '../services/repeat-as-code.service';
 
