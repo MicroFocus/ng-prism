@@ -1,20 +1,20 @@
 import {element, IAttributes, IAugmentedJQuery, ICompileService, IScope} from 'angular';
 
 export class ToggleRepeatCodeController {
-    visible: boolean;
+    hidden: boolean;
 
     static $inject = ['$scope'];
 
     constructor(private $scope: IScope) {
-        this.visible = false;
+        this.hidden = true;
     }
 
     show() {
-        this.visible = true;
+        this.hidden = false;
     }
 
     hide() {
-        this.visible = false;
+        this.hidden = true;
     }
 }
 
@@ -35,7 +35,7 @@ export function ToggleRepeatDirective(RepeatAsCodeService, $compile: ICompileSer
             let code = RepeatAsCodeService(tElement, tAttrs.toggleRepeatCode);
 
             // Create an element containing the code and a toggle-show directive
-            code.attr('ng-show', '$ctrl.visible');
+            code.attr('ng-class', `[{'prism-hidden': $ctrl.hidden}]`);
             let toggleShow = element(`<toggle-show on-hide="$ctrl.hide()" on-show="$ctrl.show()"></toggle-show>`);
             let parent = element(`<div></div>`);
             parent.append(toggleShow);
