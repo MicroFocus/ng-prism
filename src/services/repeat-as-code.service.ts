@@ -3,8 +3,12 @@ import { highlight, normalizeOuterHTML } from '../highlight';
 
 export default RepeatAsCodeService;
 
+export interface IRepeatAsCodeService {
+    (element: IAugmentedJQuery, type: string): IAugmentedJQuery;
+}
+
 function RepeatAsCodeService() {
-    return (element: IAugmentedJQuery, type: string) => {
+    return (element: IAugmentedJQuery, type: string): IAugmentedJQuery => {
         let code = null;
         if (type === 'inner') {
             code = element[0].innerHTML;

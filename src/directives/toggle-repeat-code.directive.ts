@@ -1,4 +1,5 @@
 import {element, IAttributes, IAugmentedJQuery, ICompileService, IScope} from 'angular';
+import {IRepeatAsCodeService} from '../services/repeat-as-code.service';
 
 export class ToggleRepeatCodeController {
     hidden: boolean;
@@ -20,7 +21,7 @@ export class ToggleRepeatCodeController {
 
 export default ['RepeatAsCodeService', '$compile', ToggleRepeatDirective];
 
-export function ToggleRepeatDirective(RepeatAsCodeService, $compile: ICompileService) {
+export function ToggleRepeatDirective(RepeatAsCodeService: IRepeatAsCodeService, $compile: ICompileService) {
     return {
         controller: ToggleRepeatCodeController,
         controllerAs: '$ctrl',
@@ -43,7 +44,7 @@ export function ToggleRepeatDirective(RepeatAsCodeService, $compile: ICompileSer
             let linkFn = $compile(parent, null, 100);
 
             // Bind the directive to this controller
-            return (scope: IScope, iElement: IAugmentedJQuery, iAttrs: IAttributes) => {
+            return (scope: IScope, iElement: IAugmentedJQuery) => {
                 let content = linkFn(scope);
                 iElement.after(content);
             };

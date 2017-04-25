@@ -1,13 +1,12 @@
 import {element, IAugmentedJQuery} from 'angular';
 import * as Prism from 'prismjs';
 
-require('prismjs/plugins/normalize-whitespace/prism-normalize-whitespace');	// Anonymous functions to load plugins
-let whitespacePlugin = Prism.plugins.NormalizeWhitespace;					// Public-facing plugin objects
+require('prismjs/plugins/normalize-whitespace/prism-normalize-whitespace');	// Anonymous functions to load plugin
+let whitespacePlugin = Prism.plugins.NormalizeWhitespace;					// Public-facing plugin object
 
 whitespacePlugin.setDefaults({
     'tabs-to-spaces': 4
 });
-
 
 // Determine length of whitespace at beginning of string
 function getWhitespaceLength(line: string): number {
