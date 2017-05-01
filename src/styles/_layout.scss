@@ -1,7 +1,3 @@
-.prism-hidden {
-  display: none;
-}
-
 toggle-show {
   display: block;
 
@@ -11,7 +7,24 @@ toggle-show {
     margin: .5em 0;
 
     &.prism-hidden {
+      /*display: none;*/
+    }
+  }
+
+  > .code-toolbar {
+    &.prism-hidden {
       display: none;
     }
   }
 }
+
+.prism-toggleable-code {
+  max-height: 0;
+  transition: max-height .5s;
+  overflow: hidden;
+
+  &:not(.prism-hidden) {
+    max-height: 500px;
+  }
+}
+
