@@ -7,6 +7,8 @@ import {element, IAttributes, IAugmentedJQuery, ICompileService, IScope} from 'a
 import {IRepeatAsCodeService} from '../services/repeat-as-code.service';
 
 export class ToggleRepeatCodeController {
+    code: HTMLElement;
+    codeElement: HTMLElement;
     hidden: boolean;
 
     static $inject = ['$scope'];
@@ -17,10 +19,12 @@ export class ToggleRepeatCodeController {
 
     show() {
         this.hidden = false;
+        this.codeElement.style.height = this.code.clientHeight + 'px';
     }
 
     hide() {
         this.hidden = true;
+        this.codeElement.style.height = '0';
     }
 }
 
@@ -42,7 +46,6 @@ export function ToggleRepeatDirective(RepeatAsCodeService: IRepeatAsCodeService,
             let codeElement = element(`<div class="prism-toggleable-code"></div>`).append(code);
 
             // Create an element containing the code and a toggle-show directive
-            codeElement.attr('ng-class', `[{'prism-hidden': $ctrl.hidden}]`);
             let toggleShow = element(`<toggle-show on-hide="$ctrl.hide()" on-show="$ctrl.show()"></toggle-show>`);
             let parent = element(`<div></div>`);
             parent.append(toggleShow);
@@ -50,7 +53,9 @@ export function ToggleRepeatDirective(RepeatAsCodeService: IRepeatAsCodeService,
             let linkFn = $compile(parent, null, 100);
 
             // Bind the directive to this controller
-            return (scope: IScope, iElement: IAugmentedJQuery) => {
+            return (scope: IScope, iElement: IAugmentedJQuery, iAttrs: IAttributes, controller) => {
+                controller.code = code[0];
+                controller.codeElement = codeElement[0];
                 let content = linkFn(scope);
                 iElement.after(content);
             };

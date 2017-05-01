@@ -19,12 +19,13 @@ toggle-show {
 }
 
 .prism-toggleable-code {
-  max-height: 0;
-  transition: max-height .5s;
+  height: 0;
+  transition: height .3s;
   overflow: hidden;
+  margin: .5em 0;
 
-  &:not(.prism-hidden) {
-    max-height: 500px;
+  pre[class*="language-"] {
+    margin: 0;
   }
 }
 
