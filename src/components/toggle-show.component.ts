@@ -24,6 +24,15 @@ export default class HideCodeComponent {
         this.hidden = true;
     }
 
+    toggleCode() {
+        if (this.hidden) {
+            this.showCode();
+        }
+        else {
+            this.hideCode();
+        }
+    }
+
     hideCode() {
         this.onHide();
         this.hidden = true;

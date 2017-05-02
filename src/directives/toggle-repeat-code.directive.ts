@@ -8,23 +8,14 @@ import {IRepeatAsCodeService} from '../services/repeat-as-code.service';
 
 export class ToggleRepeatCodeController {
     code: HTMLElement;
-    codeElement: HTMLElement;
-    hidden: boolean;
-
-    static $inject = ['$scope'];
-
-    constructor(private $scope: IScope) {
-        this.hidden = true;
-    }
+    codeWrapper: HTMLElement;
 
     show() {
-        this.hidden = false;
-        this.codeElement.style.height = this.code.clientHeight + 'px';
+        this.codeWrapper.style.height = this.code.offsetHeight + 'px';
     }
 
     hide() {
-        this.hidden = true;
-        this.codeElement.style.height = '0';
+        this.codeWrapper.style.height = '0';
     }
 }
 
@@ -43,19 +34,19 @@ export function ToggleRepeatDirective(RepeatAsCodeService: IRepeatAsCodeService,
             // Highlight code
             tElement.removeAttr('toggle-repeat-code');
             let code = RepeatAsCodeService(tElement, tAttrs.toggleRepeatCode);
-            let codeElement = element(`<div class="prism-toggleable-code"></div>`).append(code);
+            let codeWrapper = element(`<div class="prism-toggleable-code"></div>`).append(code);
 
             // Create an element containing the code and a toggle-show directive
             let toggleShow = element(`<toggle-show on-hide="$ctrl.hide()" on-show="$ctrl.show()"></toggle-show>`);
             let parent = element(`<div></div>`);
             parent.append(toggleShow);
-            parent.append(codeElement);
+            parent.append(codeWrapper);
             let linkFn = $compile(parent, null, 100);
 
             // Bind the directive to this controller
             return (scope: IScope, iElement: IAugmentedJQuery, iAttrs: IAttributes, controller) => {
                 controller.code = code[0];
-                controller.codeElement = codeElement[0];
+                controller.codeWrapper = codeWrapper[0];
                 let content = linkFn(scope);
                 iElement.after(content);
             };
