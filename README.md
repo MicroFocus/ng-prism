@@ -1,9 +1,10 @@
 # ng-prism
 
-Provides dynamic syntax highlighting for your documentation app using PrismJS and Angular
+Provides dynamic syntax highlighting for your documentation app using PrismJS and Angular 1. 
 
 - Eliminates the need to painfully copy and escape HTML in your code demos
-- Can be used with routing libraries such as [UI-Router](https://ui-router.github.io/) 
+- Can be used with routing libraries such as [UI-Router](https://ui-router.github.io/)
+- See this [Plunkr](https://plnkr.co/edit/6p3kUL?p=info) for a live demo
 
 ### Installation
 

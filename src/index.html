@@ -52,9 +52,9 @@
 			};
 		</code></pre>
 		<pre dir="ltr"><code highlight="markup">
-			&lt;link rel="stylesheet" href="mf-icons.css" /&gt;
-			&lt;link rel="stylesheet" href="ng-mfux.css" /&gt;
-			&lt;script src="ng-mfux.js"&gt;&lt;/script&gt;
+			&lt;link rel="stylesheet" href="icons.css" /&gt;
+			&lt;link rel="stylesheet" href="ng-ux.css" /&gt;
+			&lt;script src="ng-ux.js"&gt;&lt;/script&gt;
 		</code></pre>
 	</section>
 
@@ -71,32 +71,32 @@
 			});
 		</code></pre>
 		<pre dir="ltr"><code class="language-markup">
-			&lt;link rel="stylesheet" href="mf-icons.css" /&gt;
-			&lt;link rel="stylesheet" href="ng-mfux.css" /&gt;
-			&lt;script src="ng-mfux.js"&gt;&lt;/script&gt;
+			&lt;link rel="stylesheet" href="icons.css" /&gt;
+			&lt;link rel="stylesheet" href="ng-ux.css" /&gt;
+			&lt;script src="ng-ux.js"&gt;&lt;/script&gt;
 		</code></pre>
 	</section>
 
 	<h3>Repeat as Code</h3>
 	<section>
-		<mf-app-bar repeat-as-code>
-			<h3 class="mf-title" title="App Bar Title">App Bar Title</h3>
-			<span class="mf-fill"></span>
-			<mf-button mf-toggle="accountMenu" title="Descriptive Title">user@email.com
-				<mf-icon icon="down_thick"></mf-icon>
-			</mf-button>
+		<app-bar repeat-as-code>
+			<h4 class="title" title="App Bar Title">App Bar Title</h4>
+			<span class="fill"></span>
+			<button toggle="accountMenu" title="Descriptive Title">user@email.com
+				<icon icon="down_thick"></icon>
+			</button>
 
-			<mf-menu name="accountMenu">
-				<mf-button>Settings</mf-button>
-				<mf-button>Sign Out</mf-button>
-			</mf-menu>
-		</mf-app-bar>
+			<menu name="accountMenu">
+				<button>Settings</button>
+				<button>Sign Out</button>
+			</menu>
+		</app-bar>
 		<div repeat-as-code="inner">
-			<mf-icon icon="favorite_outline_thin" class="mf-medium">
+			<icon icon="favorite_outline_thin" class="medium">
 				My Icon
-			</mf-icon>
-			<mf-icon icon="search_thick" class="mf-medium"></mf-icon>
-			<mf-icon icon="close_thick" class="mf-medium"></mf-icon>
+			</icon>
+			<icon icon="search_thick" class="medium"></icon>
+			<icon icon="close_thick" class="medium"></icon>
 		</div>
 	</section>
 
@@ -104,13 +104,13 @@
 	<section>
 		<div toggle-repeat-code="inner">
 		<span>
-			<i class="mf-icon mf-icon-search_thick"></i>
-			<button type="button" class="mf-menu-toggle"><span>Jonathan Smithsonian</span><i class="mf-icon mf-icon-down_thick"></i></button>
+			<i class="icon icon-search_thick"></i>
+			<button type="button" class="menu-toggle"><span>Jonathan Smithsonian</span><i class="icon icon-down_thick"></i></button>
 		</span>
 		</div>
 		<span toggle-repeat-code>
-			<i class="mf-icon mf-icon-search_thick"></i>
-			<button type="button" class="mf-menu-toggle"><span>Jonathan Smithsonian</span><i class="mf-icon mf-icon-down_thick"></i></button>
+			<i class="icon icon-search_thick"></i>
+			<button type="button" class="menu-toggle"><span>Jonathan Smithsonian</span><i class="icon icon-down_thick"></i></button>
 		</span>
 	</section>
 
@@ -131,9 +131,9 @@
 
 		<toggleable-code>
 			<pre dir="ltr"><code class="language-markup">
-				&lt;link rel="stylesheet" href="mf-icons.css" /&gt;
-				&lt;link rel="stylesheet" href="ng-mfux.css" /&gt;
-				&lt;script src="ng-mfux.js"&gt;&lt;/script&gt;
+				&lt;link rel="stylesheet" href="icons.css" /&gt;
+				&lt;link rel="stylesheet" href="ng-ux.css" /&gt;
+				&lt;script src="ng-ux.js"&gt;&lt;/script&gt;
 			</code></pre>
 		</toggleable-code>
 		<toggleable-code>
@@ -155,12 +155,6 @@
 			</code></pre>
 		</toggleable-code>
 	</section>
-
-
-
-
-
-
 
 	<script>
         angular.bootstrap(document, ['ng-prism']);
