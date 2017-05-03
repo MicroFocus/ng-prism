@@ -4,10 +4,37 @@ toggle-show {
   > .show-code {
     display: block;
     text-align: right;
-    margin: .5em 0;
+    margin: 5px 0;
 
     &.prism-hidden {
       /*display: none;*/
+    }
+
+    > svg {
+      user-select: none;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      border: 1px solid transparent;
+      border-radius: 3px;
+      color: #434c50;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 15px;
+      text-align: center;
+      text-decoration: none;
+      vertical-align: middle;
+
+      background-color: transparent;
+      padding: 0;
+
+      margin-right: 8px;
+
+      &:hover, &:focus {
+        background-color: #f6f9f8;
+        border-color: #dae1e1;
+        color: #007cd0
+      }
     }
   }
 
