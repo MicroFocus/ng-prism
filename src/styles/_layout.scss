@@ -1,3 +1,22 @@
+.prism-toggleable-code {
+  height: 0;
+  transition: height .25s;
+  overflow: hidden;
+
+  &.prism-visible {
+    margin-bottom: 10px;
+  }
+
+  pre[class*="language-"] {
+    margin: 0;
+  }
+}
+
+pre[class*="language-"] {
+  font-size: 14px;
+  border: none;
+}
+
 toggle-show {
   display: block;
 
@@ -30,17 +49,4 @@ toggle-show {
   }
 }
 
-.prism-toggleable-code {
-  height: 0;
-  transition: height .3s;
-  overflow: hidden;
-
-  &.prism-visible {
-    margin-bottom: 10px;
-  }
-
-  pre[class*="language-"] {
-    margin: 0;
-  }
-}
 

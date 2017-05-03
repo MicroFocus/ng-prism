@@ -5,12 +5,12 @@ body, html {
 	padding: 0;
 }
 
-h2 {
+h3 {
 	color: cornflowerblue;
 	cursor: pointer;
 }
 
-h2:hover, h2:focus {
+h3:hover, h3:focus {
 	background-color: beige;
 }
 
