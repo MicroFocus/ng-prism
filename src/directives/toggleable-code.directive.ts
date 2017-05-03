@@ -1,20 +1,19 @@
 /*
- * Dynamically creates a code block that matches the element
- * Shows/hides the code block per user input
+ * Toggles show/hide of the code block inside it
  */
 
-import {element, IAttributes, IAugmentedJQuery, ICompileService, IScope} from 'angular';
-import {IRepeatAsCodeService} from '../services/repeat-as-code.service';
+let templateUrl = require('./toggleable-code.directive.html');
 
-const CODE_WRAPPER_TEMPLATE = `<div class="prism-toggleable-code" ng-class="{'prism-visible': $ctrl.visible}"></div>`;
-const TOGGLE_SHOW_TEMPLATE = `<toggle-show on-hide="$ctrl.hide()" on-show="$ctrl.show()"></toggle-show>`;
+import {IAttributes, IAugmentedJQuery, IScope} from 'angular';
 
 export class ToggleableCodeController {
     code: HTMLElement;
     codeWrapper: HTMLElement;
     visible: boolean;
 
-    constructor() {
+    static $inject = ['$scope', '$element'];
+
+    constructor(private $scope: IScope, private $element: IAugmentedJQuery) {
         this.visible = false;
     }
 
@@ -29,34 +28,19 @@ export class ToggleableCodeController {
     }
 }
 
-export default ['RepeatAsCodeService', '$compile', ToggleRepeatDirective];
+export default [ToggleableCodeDirective];
 
-export function ToggleRepeatDirective(RepeatAsCodeService: IRepeatAsCodeService, $compile: ICompileService) {
+export function ToggleableCodeDirective() {
     return {
         controller: ToggleableCodeController,
         controllerAs: '$ctrl',
         restrict: 'E',
-        compile: (tElement: IAugmentedJQuery, tAttrs: IAttributes) => {
-            let code = tAttrs.data;
-            // Highlight code
-            tElement.removeAttr('toggle-repeat-code');
-            let code = RepeatAsCodeService(tElement, tAttrs.toggleRepeatCode);
-            let codeWrapper = element(CODE_WRAPPER_TEMPLATE).append(code);
-
-            // Create an element containing the code and a toggle-show directive
-            let toggleShow = element(TOGGLE_SHOW_TEMPLATE);
-            let parent = element(`<div></div>`);
-            parent.append(toggleShow);
-            parent.append(codeWrapper);
-            let linkFn = $compile(parent, null, 100);
-
-            // Bind the directive to this controller
-            return (scope: IScope, iElement: IAugmentedJQuery, iAttrs: IAttributes, controller) => {
-                controller.code = code[0];
-                controller.codeWrapper = codeWrapper[0];
-                let content = linkFn(scope);
-                iElement.after(content);
-            };
+        scope: {},
+        templateUrl: templateUrl,
+        transclude: true,
+        link: function(scope: IScope, iElement: IAugmentedJQuery, iAttrs: IAttributes, controller) {
+            controller.code = iElement.find('pre')[0];
+            controller.codeWrapper = iElement.find('div')[0];
         }
     };
 }
