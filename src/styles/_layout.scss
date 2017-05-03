@@ -35,6 +35,10 @@ toggle-show {
   transition: height .3s;
   overflow: hidden;
 
+  &.prism-visible {
+    margin-bottom: 10px;
+  }
+
   pre[class*="language-"] {
     margin: 0;
   }

@@ -6,18 +6,26 @@
 import {element, IAttributes, IAugmentedJQuery, ICompileService, IScope} from 'angular';
 import {IRepeatAsCodeService} from '../services/repeat-as-code.service';
 
-const BOTTOM_MARGIN_PX = 10;
+const CODE_WRAPPER_TEMPLATE = `<div class="prism-toggleable-code" ng-class="{'prism-visible': $ctrl.visible}"></div>`;
+const TOGGLE_SHOW_TEMPLATE = `<toggle-show on-hide="$ctrl.hide()" on-show="$ctrl.show()"></toggle-show>`;
+
 export class ToggleRepeatCodeController {
     code: HTMLElement;
     codeWrapper: HTMLElement;
+    visible: boolean;
+
+    constructor() {
+        this.visible = false;
+    }
 
     show() {
-        let codeHeight = this.code.offsetHeight + BOTTOM_MARGIN_PX;
-        this.codeWrapper.style.height = codeHeight + 'px';
+        this.codeWrapper.style.height = this.code.offsetHeight + 'px';
+        this.visible = true;
     }
 
     hide() {
         this.codeWrapper.style.height = '0';
+        this.visible = false;
     }
 }
 
@@ -36,10 +44,10 @@ export function ToggleRepeatDirective(RepeatAsCodeService: IRepeatAsCodeService,
             // Highlight code
             tElement.removeAttr('toggle-repeat-code');
             let code = RepeatAsCodeService(tElement, tAttrs.toggleRepeatCode);
-            let codeWrapper = element(`<div class="prism-toggleable-code"></div>`).append(code);
+            let codeWrapper = element(CODE_WRAPPER_TEMPLATE).append(code);
 
             // Create an element containing the code and a toggle-show directive
-            let toggleShow = element(`<toggle-show on-hide="$ctrl.hide()" on-show="$ctrl.show()"></toggle-show>`);
+            let toggleShow = element(TOGGLE_SHOW_TEMPLATE);
             let parent = element(`<div></div>`);
             parent.append(toggleShow);
             parent.append(codeWrapper);
