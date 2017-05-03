@@ -41,7 +41,7 @@ Dynamic Uses
     
 - `toggleable-code` element ("Show Code" button for any code block)
 
-   * Child should be any element in the "General Uses" section above 
+   * Child element should be one of the "General Uses" above 
     
 ### Example App
 
