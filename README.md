@@ -1,22 +1,31 @@
 # ng-prism
 
+Provides dynamic syntax highlighting for your documentation app using PrismJS and Angular
+
+- Works with ui-router
+- Eliminates the need to painfully copy and escape HTML in your code demos
+
 ### Installation
 
-- `npm install joswhite/ng-prism`
-- `angular.module('myApp', ['ng-prism']);`
-- `<script src="ng-prism.js">`<br>
-  `<link rel="stylesheet" href="ng-prism.css">`
+1. `npm install joswhite/ng-prism`
+
+2. `angular.module('myApp', ['ng-prism']);`
+
+3. `<script src="ng-prism.js">`<br>
+   `<link rel="stylesheet" href="ng-prism.css">`
 
 ### Use
 
-- See examples in index.html
+- See examples in `src/index.html`
 
-- `pre > code[highlight]` (highlights code inside it)
+- `pre > code[highlight="language-xxxx"]` (highlights code inside it)
 
     * `highlight` attribute specifies PrismJS language (default: Javascript)
     * HTML markup needs to be escaped
 
 - PrismJS direct use (just like https://prismjs.com)
+
+    * If using [ui-router](https://ui-router.github.io/ng1/), use `pre > code[highlight]` to 
 
 - `repeat-as-code` attribute (retains HTML element and highlights the code that created it)
 
@@ -28,12 +37,21 @@
 
    * child should be any element that produces a code block 
     
+### Example App
+
+Run `npm start` and navigate to localhost:8080. 
+
 ### Development
 
-Run `gulp` and navigate to localhost:8080. 
+`npm install -g gulp`
+
+- Build: `gulp build:development`
+- Watch: `gulp`
+- Works with LiveReload
 
 ### Notes
 
+- Default theme is prism-okaidia. You can change this in `src/main.scss`
+- The consuming application is responsible for styling the "Show Code" button
 - ng-prism converts 4 spaces to the tab character and forces LTR display on the code block
 - This project uses [jedwardhawkins/ng-gulp](https://www.github.com/jedwardhawkins/ng-gulp)
-- The consuming application is responsible for styling the "Show Code" button

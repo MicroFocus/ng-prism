@@ -4,6 +4,7 @@
   "description": "Angular directives for Prism code highlighting.",
   "main": "src/main.ts",
   "scripts": {
+    "start": "node ./node_modules/gulp/bin/gulp.js",
     "preversion": "gulp clean",
     "version": "gulp build:development && git add -A dist",
     "postversion": "git push && git push --tags"
