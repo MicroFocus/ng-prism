@@ -14,7 +14,7 @@ import {IScope} from 'angular';
     },
     templateUrl: require('./toggle-show.component.html')
 })
-export default class HideCodeComponent {
+export default class ToggleShowComponent {
     hidden: boolean;
     onHide: () => void;
     onShow: () => void;

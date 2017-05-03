@@ -7,6 +7,11 @@ body, html {
 
 h2 {
 	color: cornflowerblue;
+	cursor: pointer;
+}
+
+h2:hover, h2:focus {
+	background-color: beige;
 }
 
 section {
