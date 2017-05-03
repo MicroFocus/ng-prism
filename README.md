@@ -5,7 +5,7 @@ and [Angular 1](https://angularjs.org/).
 
 - Eliminates the need to painfully copy and escape HTML in your code demos
 - Can be used with routing libraries such as [UI-Router](https://ui-router.github.io/)
-- See this [Plunkr](https://plnkr.co/edit/6p3kUL?p=info) for a live demo
+- See this [Plunkr](https://plnkr.co/edit/6p3kUL?p=preview) for a live demo
 
 ### Installation
 
