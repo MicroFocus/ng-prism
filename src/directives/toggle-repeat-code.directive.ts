@@ -6,12 +6,14 @@
 import {element, IAttributes, IAugmentedJQuery, ICompileService, IScope} from 'angular';
 import {IRepeatAsCodeService} from '../services/repeat-as-code.service';
 
+const BOTTOM_MARGIN_PX = 10;
 export class ToggleRepeatCodeController {
     code: HTMLElement;
     codeWrapper: HTMLElement;
 
     show() {
-        this.codeWrapper.style.height = this.code.offsetHeight + 'px';
+        let codeHeight = this.code.offsetHeight + BOTTOM_MARGIN_PX;
+        this.codeWrapper.style.height = codeHeight + 'px';
     }
 
     hide() {
