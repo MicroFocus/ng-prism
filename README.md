@@ -14,7 +14,7 @@
 - `highlight` attribute (highlights code)
 
     * attribute specifies PrismJS language (default: Javascript)
-    * markup needs to be escaped
+    * HTML markup needs to be escaped
 
 - PrismJS direct use (just like https://prismjs.com)
 
@@ -35,5 +35,5 @@ Run `gulp` and navigate to localhost:8080.
 ### Notes
 
 - ng-prism converts 4 spaces to the tab character and forces LTR display on the code block
-- HTML markup needs to be escaped, unless you are using the `repeat-as-code` directive
-- This project uses [jedwardhawkins/ng-gulp](https://www.github.com/jedwardhawkins/ng-gulp).
+- This project uses [jedwardhawkins/ng-gulp](https://www.github.com/jedwardhawkins/ng-gulp)
+- The consuming application is responsible for styling the "Show Code" button
