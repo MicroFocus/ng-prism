@@ -2,8 +2,8 @@
 
 Provides dynamic syntax highlighting for your documentation app using PrismJS and Angular
 
-- Works with ui-router
 - Eliminates the need to painfully copy and escape HTML in your code demos
+- Can be used with routing libraries such as [UI-Router](https://ui-router.github.io/) 
 
 ### Installation
 
@@ -18,14 +18,14 @@ Provides dynamic syntax highlighting for your documentation app using PrismJS an
 
 - See examples in `src/index.html`
 
-- `pre > code[highlight="language-xxxx"]` (highlights code inside it)
+- `pre > code[highlight="language-xxxx"]` (highlights the code inside it)
 
-    * `highlight` attribute specifies PrismJS language (default: Javascript)
+    * `highlight` attribute specifies PrismJS language (default: `language-javascript`)
     * HTML markup needs to be escaped
 
 - PrismJS direct use (just like https://prismjs.com)
 
-    * If using [ui-router](https://ui-router.github.io/ng1/), use `pre > code[highlight]` to 
+    * If using a routing library, use `pre > code[highlight]` instead
 
 - `repeat-as-code` attribute (retains HTML element and highlights the code that created it)
 
