@@ -11,16 +11,16 @@
 
 - See examples in index.html
 
-- `highlight` attribute (highlights code)
+- `pre > code[highlight]` (highlights code inside it)
 
-    * attribute specifies PrismJS language (default: Javascript)
+    * `highlight` attribute specifies PrismJS language (default: Javascript)
     * HTML markup needs to be escaped
 
 - PrismJS direct use (just like https://prismjs.com)
 
-- `repeat-as-code` attribute (highlights code for its HTML element)
+- `repeat-as-code` attribute (retains HTML element and highlights the code that created it)
 
-    * `repeat-as-code="inner"` highlights code for its child element
+    * `repeat-as-code="inner"` highlights the code that created its HTML children elements
     
 - `toggle-repeat-code` attribute (`repeat-as-code` with a "Show Code" button)
     
