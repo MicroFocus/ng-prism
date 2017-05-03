@@ -12,24 +12,102 @@
 	<script type="application/javascript" src="ng-prism.js"></script>
 	<script>
 		window.onload = function() {
+		    // Change direction button
             document.getElementById('changeDir').addEventListener('click', function() {
                 document.body.dir = (document.body.dir === 'rtl') ? 'ltr' : 'rtl';
             });
+
+            // Header toggles
+            var sectionHeaders = document.getElementsByTagName('h2');
+            for (var i = 0; i < sectionHeaders.length; i++) {
+                var sectionHeader = sectionHeaders[i];
+                sectionHeader.addEventListener('click', function() {
+                    var section = this.nextElementSibling;
+                    var visible = (section.style.display === 'block');
+                    section.style.display = visible ? 'none' : 'block';
+                });
+			}
 		};
 	</script>
 </head>
 <body>
 	<button id="changeDir">Change direction</button>
-	<div toggle-repeat-code="inner">
+	<h2>Toggle Repeat Code</h2>
+	<section>
+		<div toggle-repeat-code="inner">
 		<span>
 			<i class="mf-icon mf-icon-search_thick"></i>
 			<button type="button" class="mf-menu-toggle"><span>Jonathan Smithsonian</span><i class="mf-icon mf-icon-down_thick"></i></button>
 		</span>
-	</div>
-	<span toggle-repeat-code>
+		</div>
+		<span toggle-repeat-code>
 		<i class="mf-icon mf-icon-search_thick"></i>
 		<button type="button" class="mf-menu-toggle"><span>Jonathan Smithsonian</span><i class="mf-icon mf-icon-down_thick"></i></button>
 	</span>
+	</section>
+
+	<h2>Repeat as Code</h2>
+	<section>
+		<mf-app-bar repeat-as-code>
+			<h3 class="mf-title" title="App Bar Title">App Bar Title</h3>
+			<span class="mf-fill"></span>
+			<mf-button mf-toggle="accountMenu" title="Descriptive Title">user@email.com
+				<mf-icon icon="down_thick"></mf-icon>
+			</mf-button>
+
+			<mf-menu name="accountMenu">
+				<mf-button>Settings</mf-button>
+				<mf-button>Sign Out</mf-button>
+			</mf-menu>
+		</mf-app-bar>
+		<div repeat-as-code="inner">
+			<mf-icon icon="favorite_outline_thin" class="mf-medium">
+				My Icon
+			</mf-icon>
+			<mf-icon icon="search_thick" class="mf-medium"></mf-icon>
+			<mf-icon icon="close_thick" class="mf-medium"></mf-icon>
+		</div>
+	</section>
+
+	<h2>PrismJS</h2>
+	<section>
+		<pre dir="ltr"><code class="language-javascript">
+		otherLines.forEach((line: string) => {
+			if (!isBlankLine(line)) {
+				whitespaceLength = getWhitespaceLength(line);
+				if (commonWhitespaceLength === -1 || whitespaceLength < commonWhitespaceLength) {
+					commonWhitespaceLength = whitespaceLength;
+				}
+			}
+		});
+		</code></pre>
+	</section>
+
+	<h2>Highlight</h2>
+	<section>
+		<pre><code highlight>
+		this.openPromptDialog = function () {
+			this.MfDialogService
+				.prompt({
+				cancel: 'Cancel',
+				ok: 'OK',
+				textContent: 'What do you want to say?',
+				title: 'Prompt'
+			})
+				.then(function (result) {
+				alert(result);
+			}, function () {
+				alert('declined');
+			});
+		};
+    </code></pre>
+		<pre dir="ltr"><code class="language-markup">
+		&lt;link rel="stylesheet" href="mf-icons.css" /&gt;
+		&lt;link rel="stylesheet" href="ng-mfux.css" /&gt;
+		&lt;script src="ng-mfux.js"&gt;&lt;/script&gt;
+	</code></pre>
+	</section>
+
 	<script>
         angular.bootstrap(document, ['ng-prism']);
     </script>
