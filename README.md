@@ -20,6 +20,8 @@ and [Angular 1](https://angularjs.org/).
 
 - See examples in `src/index.html`
 
+General Uses
+
 - `pre > code[highlight="language-xxxx"]` (highlights the code inside it)
 
     * `highlight` attribute specifies PrismJS language (default: `language-javascript`)
@@ -29,6 +31,8 @@ and [Angular 1](https://angularjs.org/).
 
     * If using a routing library, use `pre > code[highlight]` instead
 
+Dynamic Uses
+
 - `repeat-as-code` attribute (retains HTML element and highlights the code that created it)
 
     * `repeat-as-code="inner"` highlights the code that created its HTML children elements
@@ -37,7 +41,7 @@ and [Angular 1](https://angularjs.org/).
     
 - `toggleable-code` element ("Show Code" button for any code block)
 
-   * child should be any element that produces a code block 
+   * Child should be any element in the "General Uses" section above 
     
 ### Example App
 
