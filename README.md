@@ -9,16 +9,24 @@
 
 ### Use
 
-- Use Prism directly - http://prismjs.com (the example below highlights Javascript code)<br>
-  `<pre><code class="language-javascript">...</code></pre>`
+- See examples in index.html
 
-- `highlight` directive - Use Prism without page reload (i.e. works with UIRouter)<br>
-  `<pre><code highlight>...</code></pre>` (default language is Javascript)<br>
-  `<pre><code highlight="xml">...</code></pre>`
-  
-- `repeat-as-code` directive - repeats HTML as highlighted code immediately after tag:<br>
-  `<tag repeat-as-code>...</tag>` becomes HTML &lt;tag&gt;...&lt;/tag&gt; followed by code `<tag>...</tag>`
-   * `repeat-as-code="inner"` - uses inner HTML for code block
+- `highlight` attribute (highlights code)
+
+    * attribute specifies PrismJS language (default: Javascript)
+    * markup needs to be escaped
+
+- PrismJS direct use (just like https://prismjs.com)
+
+- `repeat-as-code` attribute (highlights code for its HTML element)
+
+    * `repeat-as-code="inner"` highlights code for its child element
+    
+- `toggle-repeat-code` attribute (`repeat-as-code` with a "Show Code" button)
+    
+- `toggleable-code` element ("Show Code" button for any code block)
+
+   * child should be any element that produces a code block 
     
 ### Development
 
