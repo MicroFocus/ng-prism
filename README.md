@@ -24,7 +24,7 @@ Provides dynamic syntax highlighting for your documentation app using PrismJS an
     * `highlight` attribute specifies PrismJS language (default: `language-javascript`)
     * HTML markup needs to be escaped
 
-- PrismJS direct use (just like https://prismjs.com)
+- PrismJS direct use (see [PrismJS website](http://prismjs.com/))
 
     * If using a routing library, use `pre > code[highlight]` instead
 
