@@ -37,7 +37,7 @@
 	<section>
 		<pre><code highlight>
 			this.openPromptDialog = function () {
-				this.MfDialogService
+				this.DialogService
 					.prompt({
 					cancel: 'Cancel',
 					ok: 'OK',
@@ -108,10 +108,31 @@
 			<button type="button" class="menu-toggle"><span>Jonathan Smithsonian</span><i class="icon icon-down_thick"></i></button>
 		</span>
 		</div>
-		<span toggle-repeat-code>
+		<span toggle-repeat-code toggleable-code-id="trc-01">
 			<i class="icon icon-search_thick"></i>
 			<button type="button" class="menu-toggle"><span>Jonathan Smithsonian</span><i class="icon icon-down_thick"></i></button>
 		</span>
+		<toggleable-code id="trc-01">
+			<pre dir="ltr"><code class="language-javascript">
+				otherLines.forEach((line: string) => {
+					if (!isBlankLine(line)) {
+						whitespaceLength = getWhitespaceLength(line);
+						if (commonWhitespaceLength === -1 || whitespaceLength < commonWhitespaceLength) {
+							commonWhitespaceLength = whitespaceLength;
+						}
+					}
+				});
+			</code></pre>
+			<pre dir="ltr"><code class="language-javascript">
+				this.DialogService
+					.prompt({
+					cancel: 'Cancel',
+					ok: 'OK',
+					textContent: 'What do you want to say?',
+					title: 'Prompt'
+				});
+			</code></pre>
+		</toggleable-code>
 	</section>
 
 	<h3>Toggleable Code</h3>
@@ -139,7 +160,7 @@
 		<toggleable-code>
 			<pre><code highlight>
 				this.openPromptDialog = function () {
-					this.MfDialogService
+					this.DialogService
 						.prompt({
 						cancel: 'Cancel',
 						ok: 'OK',
