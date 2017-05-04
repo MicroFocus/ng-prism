@@ -6,23 +6,41 @@ let templateUrl = require('./toggleable-code.directive.html');
 
 import {IAttributes, IAugmentedJQuery, IScope} from 'angular';
 
-export class ToggleableCodeController {
+export interface IToggleableCodeController {
     code: HTMLElement;
     codeWrapper: HTMLElement;
+}
+
+export class ToggleableCodeController implements IToggleableCodeController {
+    code: HTMLElement;
+    codeWrapper: HTMLElement;
+    hidden: boolean;
     visible: boolean;
 
     constructor() {
         this.visible = false;
+        this.hidden = !this.visible;
+    }
+
+    toggleCode() {
+        if (this.hidden) {
+            this.show();
+        }
+        else {
+            this.hide();
+        }
     }
 
     show() {
         this.codeWrapper.style.height = this.code.offsetHeight + 'px';
         this.visible = true;
+        this.hidden = !this.visible;
     }
 
     hide() {
         this.codeWrapper.style.height = '0';
         this.visible = false;
+        this.hidden = !this.visible;
     }
 }
 
@@ -36,9 +54,19 @@ export function ToggleableCodeDirective() {
         scope: {},
         templateUrl: templateUrl,
         transclude: true,
-        link: function(scope: IScope, iElement: IAugmentedJQuery, iAttrs: IAttributes, controller) {
-            controller.code = iElement.find('pre')[0];
-            controller.codeWrapper = iElement.find('div')[0];
+        link: function(scope: IScope,
+                       iElement: IAugmentedJQuery,
+                       iAttrs: IAttributes,
+                       controller: IToggleableCodeController) {
+            let children = iElement.children();
+
+            for (let childIndex = 0; childIndex < children.length; childIndex++) {
+                let child = children[childIndex];
+                if (child.className.indexOf('prism-toggleable-code') !== -1) {
+                    controller.codeWrapper = child;
+                    controller.code = <HTMLElement>(child.firstElementChild);
+                }
+            }
         }
     };
 }

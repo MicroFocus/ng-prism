@@ -1,5 +1,26 @@
-<toggle-show on-hide="$ctrl.hide()" on-show="$ctrl.show()">
-</toggle-show>
+<div class="toggle-show" on-hide="$ctrl.hide()" on-show="$ctrl.show()">
+    <div ng-class="['show-code', {'prism-hidden': !$ctrl.hidden}]" dir="ltr">
+        <button class="ias-button ias-icon-button" ng-click="$ctrl.toggleCode()" type="button" title="Toggle Code">
+            <svg viewBox="0 0 24 24">
+                <path fill="currentColor" d="M14.6,16.6L19.2,12L14.6,7.4L16,6L22,12L16,18L14.6,16.6M9.4,16.6L4.8,12L9.4,7.4L8,6L2,12L8,18L9.4,16.6Z"></path>
+            </svg>
+        </button>
+    </div>
+    <div ng-class="['code-toolbar', {'prism-hidden': $ctrl.hidden}]" dir="ltr">
+        <div class="toolbar">
+            <div class="toolbar-item" ng-click="$ctrl.hideCode()">
+            <span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72">
+                    <title>1-icons_expanded</title>
+                    <polygon
+                        points="60.45 14.55 57.62 11.72 36.08 33.26 14.61 11.78 11.78 14.61 33.26 36.08 11.62 57.72 14.45 60.55 36.08 38.91 57.88 60.7 60.7 57.88 38.91 36.08 60.45 14.55"
+                        fill="white"/>
+                </svg>
+            </span>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="prism-toggleable-code" ng-class="{'prism-visible': $ctrl.visible}" ng-transclude>
 </div>
 
