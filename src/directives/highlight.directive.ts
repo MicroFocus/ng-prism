@@ -1,5 +1,5 @@
 /*
- * Static highlighting of a code block
+ * Static syntax highlighting
  */
 import {IAttributes, IAugmentedJQuery} from 'angular';
 let Prism = require('prismjs');

@@ -1,6 +1,6 @@
 /*
- * Dynamically creates a code block that matches the element
- * Shows/hides the code block per user input
+ * Dynamically inserts a code block containing the code that created this element
+ * Includes a Show/Hide Code button
  */
 
 import {element, IAttributes, IAugmentedJQuery} from 'angular';

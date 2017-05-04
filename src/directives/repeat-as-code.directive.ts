@@ -1,5 +1,5 @@
 /*
- * Dynamically creates a code block that matches the element
+ * Dynamically inserts a code block containing the code that created this element
  */
 
 import { IAttributes, IAugmentedJQuery } from 'angular';
