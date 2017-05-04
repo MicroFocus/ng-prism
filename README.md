@@ -36,12 +36,11 @@ Dynamic Uses
 - `repeat-as-code` attribute (retains HTML element and highlights the code that created it)
 
     * `repeat-as-code="inner"` highlights the code that created its HTML children elements
+    * if present, `prism-insert-id` attribute specifies where the highlighted code should be inserted 
     
 - `toggle-repeat-code` attribute (`repeat-as-code` with a "Show Code" button)
     
-- `toggleable-code` element ("Show Code" button for any code block)
-
-   * Child element should be one of the "General Uses" above 
+- `toggleable-code` element ("Show Code" button to show/hide everything inside it)
     
 ### Example App
 
