@@ -14,33 +14,29 @@ export interface IToggleableCodeController {
 export class ToggleableCodeController implements IToggleableCodeController {
     code: HTMLElement;
     codeWrapper: HTMLElement;
-    hidden: boolean;
     visible: boolean;
 
     constructor() {
         this.visible = false;
-        this.hidden = !this.visible;
     }
 
     toggleCode() {
-        if (this.hidden) {
-            this.show();
+        if (this.visible) {
+            this.hide();
         }
         else {
-            this.hide();
+            this.show();
         }
     }
 
     show() {
         this.codeWrapper.style.height = this.code.offsetHeight + 'px';
         this.visible = true;
-        this.hidden = !this.visible;
     }
 
     hide() {
         this.codeWrapper.style.height = '0';
         this.visible = false;
-        this.hidden = !this.visible;
     }
 }
 
