@@ -17,39 +17,6 @@ pre[class*="language-"] {
   border: none;
 }
 
-toggle-show {
-  display: block;
-
-  > .show-code {
-    display: block;
-    text-align: right;
-    margin: 5px 0;
-
-    &.prism-hidden {
-      /*display: none;*/
-    }
-
-    > button {
-      margin-right: 8px;
-
-      > svg {
-        font-size: 25px;
-        display: block;
-        height: 1em;
-        width: 1em;
-        vertical-align: middle;
-      }
-    }
-  }
-
-  > .code-toolbar {
-    &.prism-hidden {
-      display: none;
-    }
-  }
-}
-
-
 .toggle-show {
   display: block;
 
