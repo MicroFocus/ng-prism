@@ -80,20 +80,20 @@
 	<h3>Repeat as Code</h3>
 	<section>
 		<app-bar repeat-as-code>
-			<span class="title" title="App Bar Title">Whole Element</span>
+			<span class="title" title="Span Title">Whole Element</span>
 			<button>Settings</button>
 			<button>Sign Out</button>
 		</app-bar>
 		<app-bar repeat-as-code="inner">
-			<span class="title" title="App Bar Title">Child Elements</span>
+			<span class="title" title="Span Title">Child Elements</span>
 			<button>Settings</button>
 			<button>Sign Out</button>
 		</app-bar>
-		<div repeat-as-code prism-insert-id="trc-01" style="margin-bottom: 5px;">
-			<span class="title" title="App Bar Title">Inserted somewhere else</span>
+		<div repeat-as-code prism-insert-id="rac-01" style="margin-bottom: 5px;">
+			<span class="title" title="Span Title">Inserted somewhere else</span>
 		</div>
 		<button>Breaks the flow</button>
-		<div id="trc-01">
+		<div id="rac-01">
 			<pre dir="ltr"><code class="language-javascript">
 				var codeWasAlreadyHere = null;
 			</code></pre>
@@ -102,20 +102,21 @@
 
 	<h3>Toggle Repeat Code</h3>
 	<section>
-		<span toggle-repeat-code>
+		<div toggle-repeat-code>
+			<p>Whole Element</p>
 			<i class="icon icon-search_thick"></i>
 			<button type="button" class="menu-toggle"><span>Jonathan Smithsonian</span><i class="icon icon-down_thick"></i></button>
-		</span>
+		</div>
 		<div toggle-repeat-code="inner">
-			<span>
-				<i class="icon icon-search_thick"></i>
-				<button type="button" class="menu-toggle"><span>Jonathan Smithsonian</span><i class="icon icon-down_thick"></i></button>
-			</span>
+			<p>Child Elements</p>
+			<i class="icon icon-search_thick"></i>
+			<button type="button" class="menu-toggle"><span>Jonathan Smithsonian</span><i class="icon icon-down_thick"></i></button>
 		</div>
 	</section>
 
 	<h3>Toggleable Code</h3>
 	<section>
+		<p>w/ PrismJS</p>
 		<toggleable-code>
 			<pre dir="ltr"><code class="language-javascript">
 				otherLines.forEach((line: string) => {
@@ -128,6 +129,7 @@
 				});
 			</code></pre>
 		</toggleable-code>
+		<p>w/ Highlight</p>
 		<toggleable-code>
 			<pre><code highlight>
 				if (!isBlankLine(line)) {
@@ -143,6 +145,15 @@
 					textContent: 'What do you want to say?',
 					title: 'Prompt'
 				})
+			</code></pre>
+		</toggleable-code>
+		<div repeat-as-code prism-insert-id="tc-01" style="margin-bottom: 5px;">
+			<span class="title" title="Span Title">Inserted somewhere else</span>
+		</div>
+		<button>Breaks the flow</button>
+		<toggleable-code id="tc-01">
+			<pre dir="ltr"><code class="language-javascript">
+				var codeWasAlreadyHere = null;
 			</code></pre>
 		</toggleable-code>
 	</section>
