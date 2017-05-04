@@ -114,6 +114,17 @@
 		</span>
 		<toggleable-code id="trc-01">
 			<pre dir="ltr"><code class="language-javascript">
+				this.DialogService
+					.prompt({
+					cancel: 'Cancel',
+					ok: 'OK',
+					textContent: 'What do you want to say?',
+					title: 'Prompt'
+				});
+			</code></pre>
+		</toggleable-code>
+		<toggleable-code>
+			<pre dir="ltr"><code class="language-javascript">
 				otherLines.forEach((line: string) => {
 					if (!isBlankLine(line)) {
 						whitespaceLength = getWhitespaceLength(line);

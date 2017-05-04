@@ -14,9 +14,17 @@ export function ToggleRepeatDirective(RepeatAsCodeService: IRepeatAsCodeService)
         restrict: 'A',
         compile: (tElement: IAugmentedJQuery, tAttrs: IAttributes) => {
             tElement.removeAttr('toggle-repeat-code');
+            tElement.removeAttr('toggleable-code-id');
             let code = RepeatAsCodeService(tElement, tAttrs.toggleRepeatCode);
-            let toggleableCode = element(`<toggleable-code></toggleable-code>`).append(code);
-            tElement.after(toggleableCode);
+
+            if (tAttrs.toggleableCodeId) {
+                let toggleableCode = document.getElementById(tAttrs.toggleableCodeId);
+                toggleableCode.insertBefore(code[0], toggleableCode.firstElementChild);
+            }
+            else {
+                let toggleableCode = element(`<toggleable-code></toggleable-code>`).append(code);
+                tElement.after(toggleableCode);
+            }
         }
     };
 }
