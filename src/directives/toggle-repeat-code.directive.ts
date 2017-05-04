@@ -3,7 +3,7 @@
  * Shows/hides the code block per user input
  */
 
-import {element, IAttributes, IAugmentedJQuery, ICompileService, IScope} from 'angular';
+import {element, IAttributes, IAugmentedJQuery} from 'angular';
 import {IRepeatAsCodeService} from '../services/repeat-as-code.service';
 
 export default ['RepeatAsCodeService', ToggleRepeatDirective];
