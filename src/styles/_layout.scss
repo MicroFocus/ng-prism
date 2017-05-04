@@ -25,10 +25,6 @@ pre[class*="language-"] {
     text-align: right;
     margin: 5px 0;
 
-    &.prism-hidden {
-      /*display: none;*/
-    }
-
     > button {
       margin-right: 8px;
 
@@ -39,12 +35,6 @@ pre[class*="language-"] {
         width: 1em;
         vertical-align: middle;
       }
-    }
-  }
-
-  > .code-toolbar {
-    &.prism-hidden {
-      display: none;
     }
   }
 }
