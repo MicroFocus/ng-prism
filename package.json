@@ -1,6 +1,6 @@
 {
   "name": "ng-prism",
-  "version": "1.3.2",
+  "version": "1.4.0",
   "description": "Angular directives for Prism code highlighting.",
   "main": "src/main.ts",
   "scripts": {
