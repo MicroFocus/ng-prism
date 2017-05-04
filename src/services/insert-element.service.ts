@@ -1,18 +1,24 @@
 /*
- * Inserts a code block inside the given element; or, if an id is spec
+ * Inserts the element into the DOM.
+ * If attr.prismInsertId is specified, insert as the first child of the id
+ * Otherwise, insert after defaultPrevSibling
  */
-import {element as ngElement, IAttributes, IAugmentedJQuery} from 'angular';
 
-export default InsertElementService;
+import {IAttributes, IAugmentedJQuery} from 'angular';
 
 export interface IInsertElementService {
-    (element: IAugmentedJQuery, defaultPrevSibling: IAugmentedJQuery, attrs: IAttributes): void;
+    insert(element: IAugmentedJQuery, defaultPrevSibling: IAugmentedJQuery, attr: IAttributes): void;
+    removeAttributes(element: IAugmentedJQuery): void;
 }
 
-function InsertElementService(): IInsertElementService {
-    return (element: IAugmentedJQuery, defaultPrevSibling: IAugmentedJQuery, attrs: IAttributes): void => {
-        if (attrs.prismInsertId) {
-            let parentElement = document.getElementById(attrs.prismInsertId);
+export default class InsertElementService implements IInsertElementService {
+    removeAttributes(element: IAugmentedJQuery) {
+        element.removeAttr('prism-insert-id');
+    }
+
+    insert(element: IAugmentedJQuery, defaultPrevSibling: IAugmentedJQuery, attr: IAttributes): void {
+        if (attr.prismInsertId) {
+            let parentElement = document.getElementById(attr.prismInsertId);
             parentElement.insertBefore(element[0], parentElement.firstElementChild);
         }
         else {

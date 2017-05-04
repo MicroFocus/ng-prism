@@ -12,5 +12,6 @@ module('ng-prism', [])
     .directive('toggleableCode', ToggleableCode)
     .directive('toggleRepeatCode', ToggleRepeatCode)
 
-    .factory('InsertElementService', InsertElementService)
-    .factory('RepeatAsCodeService', RepeatAsCodeService);
+    .factory('RepeatAsCodeService', RepeatAsCodeService)
+
+    .service('InsertElementService', InsertElementService);
