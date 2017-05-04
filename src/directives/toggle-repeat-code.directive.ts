@@ -3,28 +3,22 @@
  * Includes a Show/Hide Code button
  */
 
-import {element, IAttributes, IAugmentedJQuery} from 'angular';
+import {IAttributes, IAugmentedJQuery} from 'angular';
 import {IRepeatAsCodeService} from '../services/repeat-as-code.service';
+import {IInsertElementService} from '../services/insert-element.service';
 
-export default ['RepeatAsCodeService', ToggleRepeatDirective];
+export default ['InsertElementService', 'RepeatAsCodeService', ToggleRepeatDirective];
 
-export function ToggleRepeatDirective(RepeatAsCodeService: IRepeatAsCodeService) {
+export function ToggleRepeatDirective(InsertElementService: IInsertElementService,
+                                      RepeatAsCodeService: IRepeatAsCodeService) {
     return {
         priority: 1000,
         restrict: 'A',
-        compile: (tElement: IAugmentedJQuery, tAttrs: IAttributes) => {
-            tElement.removeAttr('toggle-repeat-code');
-            tElement.removeAttr('toggleable-code-id');
-            let code = RepeatAsCodeService(tElement, tAttrs.toggleRepeatCode);
-
-            if (tAttrs.toggleableCodeId) {
-                let toggleableCode = document.getElementById(tAttrs.toggleableCodeId);
-                toggleableCode.insertBefore(code[0], toggleableCode.firstElementChild);
-            }
-            else {
-                let toggleableCode = element(`<toggleable-code></toggleable-code>`).append(code);
-                tElement.after(toggleableCode);
-            }
+        compile: (element: IAugmentedJQuery, attr: IAttributes) => {
+            element.removeAttr('toggle-repeat-code');
+            element.removeAttr('prism-insert-id');
+            let code = RepeatAsCodeService(element, attr.toggleRepeatCode);
+            InsertElementService(code, element, 'toggleable-code', attr);
         }
     };
 }

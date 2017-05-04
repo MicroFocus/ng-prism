@@ -10,7 +10,7 @@ export interface IRepeatAsCodeService {
     (element: IAugmentedJQuery, type: string): IAugmentedJQuery;
 }
 
-function RepeatAsCodeService() {
+function RepeatAsCodeService(): IRepeatAsCodeService {
     return (element: IAugmentedJQuery, type: string): IAugmentedJQuery => {
         let code = null;
         if (type === 'inner') {
