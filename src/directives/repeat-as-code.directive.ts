@@ -15,7 +15,7 @@ export default ['InsertElementService', 'RepeatAsCodeService',
             compile: (element: IAugmentedJQuery, attr: IAttributes) => {
                 element.removeAttr('repeat-as-code');
                 let code = RepeatAsCodeService(element, attr.repeatAsCode);
-                InsertElementService(code, element, 'div', attr);
+                InsertElementService(code, element, attr);
             }
         };
     }
