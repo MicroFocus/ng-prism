@@ -11,9 +11,7 @@ export class ToggleableCodeController {
     codeWrapper: HTMLElement;
     visible: boolean;
 
-    static $inject = ['$scope', '$element'];
-
-    constructor(private $scope: IScope, private $element: IAugmentedJQuery) {
+    constructor() {
         this.visible = false;
     }
 
