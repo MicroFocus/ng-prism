@@ -1,5 +1,6 @@
 /*
  * Dynamically inserts a code block containing the code that created this element
+ * Inserts the code block according to InsertElementService
  */
 
 import { IAttributes, IAugmentedJQuery } from 'angular';

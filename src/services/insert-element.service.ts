@@ -1,8 +1,9 @@
 /*
- * Inserts the element into the DOM.
- * If attr.prismInsertId is specified, insert as the first child of the id
- * Otherwise, insert after defaultPrevSibling
+ * Service that inserts an element into the DOM via its 'insert' method:
+ * - If attr.prismInsertId is specified, inserts it as the first child of the id
+ * - Otherwise, inserts it after defaultPrevSibling
  */
+
 
 import {IAttributes, IAugmentedJQuery} from 'angular';
 
