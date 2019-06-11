@@ -13,9 +13,10 @@
     "access": "public"
   },
   "engines": {
-    "node": ">=6.2",
+    "node": ">=6.2 <9",
     "npm": ">=3.9"
   },
+  "engineStrict": true,
   "author": "Joseph White <joseph.white@microfocus.com>",
   "license": "MIT",
   "repository": "https://github.com/MicroFocus/ng-prism.git",
