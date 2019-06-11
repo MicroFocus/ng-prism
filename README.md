@@ -1,7 +1,7 @@
 # ng-prism
 
 Provides dynamic syntax highlighting for your documentation app using [PrismJS](http://prismjs.com/) 
-and [Angular 1](https://angularjs.org/). 
+and [AngularJS](https://angularjs.org/). 
 
 - Eliminates the need to painfully copy and escape HTML in your code demos
 - Can be used with routing libraries such as [UI-Router](https://ui-router.github.io/)
@@ -59,4 +59,4 @@ Run `npm start` and navigate to localhost:8080.
 - Default theme is prism-okaidia. You can change this in `src/main.scss`
 - The consuming application is responsible for styling the "Show Code" button
 - ng-prism converts 4 spaces to the tab character and forces LTR display on the code block
-- This project uses [jedwardhawkins/ng-gulp](https://www.github.com/jedwardhawkins/ng-gulp)
+- This project uses [ng-gulp](https://www.github.com/MicroFocus/ng-gulp)
